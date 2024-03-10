@@ -1,0 +1,4 @@
+{% for tsheet in tsheets %}
+    <h2>{{ tsheet.headline }}</h2>
+    <img src="{{ tsheet.image.url }}" alt="{{ tsheet.headline }}">
+{% endfor %}
