@@ -1,4 +1,13 @@
-{% for tsheet in tsheets %}
-    <h2>{{ tsheet.headline }}</h2>
-    <img src="{{ tsheet.image.url }}" alt="{{ tsheet.headline }}">
-{% endfor %}
+{% extends 'tsheetapp/base.html' %}
+
+{% block title %}
+    Display T-Sheets
+{% endblock %}
+
+{% block content %}
+    {% for tsheet in tsheets %}
+        <h2>{{ tsheet.headline }}</h2>
+    {% empty %}
+        <p>No T-Sheets available.</p>
+    {% endfor %}
+{% endblock %}
