@@ -20,5 +20,5 @@ from .views import create_tsheet, display_tsheets
 
 urlpatterns = [
     path('create/', create_tsheet, name='create_tsheet'),
-    path('', display_tsheets, name='display_tsheets'),
+    path('', display_tsheets, name='display_tsheets'),  # Updated to use the function directly
 ]
