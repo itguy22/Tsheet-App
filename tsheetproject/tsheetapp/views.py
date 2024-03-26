@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import TSheetForm
 from .models import TSheet
 
@@ -10,7 +10,7 @@ def create_tsheet(request):
             return redirect('display_tsheets')
     else:
         form = TSheetForm()
-    return render(request, 'tsheetapp/create_tsheets.html', {'form': form})
+    return render(request, 'tsheetapp/create_tsheet.html', {'form': form})
 
 def display_tsheets(request):
     tsheets = TSheet.objects.all()

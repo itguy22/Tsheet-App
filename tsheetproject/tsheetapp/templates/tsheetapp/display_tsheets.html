@@ -5,9 +5,19 @@
 {% endblock %}
 
 {% block content %}
+<div class="container mt-5">
     {% for tsheet in tsheets %}
-        <h2>{{ tsheet.headline }}</h2>
+        <div class="card mb-3">
+            <div class="card-body">
+                <h2 class="card-title">{{ tsheet.headline }}</h2>
+                <!-- You can add more details here, for example: -->
+                <p class="card-text">{{ tsheet.description }}</p>
+                <!-- Add a section for displaying tsheet headline object. -->
+                <img src="{{ tsheet.image.url }}" alt="Image for {{ tsheet.headline }}" style="width: 100%; max-width: 300px;">
+            </div>
+        </div>
     {% empty %}
         <p>No T-Sheets available.</p>
     {% endfor %}
+</div>
 {% endblock %}
