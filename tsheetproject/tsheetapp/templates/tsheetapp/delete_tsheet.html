@@ -1,0 +1,14 @@
+{% extends "tsheetapp/base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Confirm Delete</h2>
+    <p>Are you sure you want to delete the tsheet titled "<strong>{{ tsheet.headline }}</strong>"?</p>
+    
+    <form action="{% url 'delete_tsheet' tsheet.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Yes, delete it</button>
+        <a href="{% url 'display_tsheets' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

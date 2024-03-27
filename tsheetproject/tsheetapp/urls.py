@@ -17,8 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import create_tsheet, display_tsheets
+from . import views
 
 urlpatterns = [
     path('create/', create_tsheet, name='create_tsheet'),
     path('', display_tsheets, name='display_tsheets'),  # Updated to use the function directly
+    path('delete_tsheet/<int:tsheet_id>/', views.delete_tsheet, name='delete_tsheet')
 ]
